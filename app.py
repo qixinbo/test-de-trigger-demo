@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 def normalize_name(name):
-    return name.strip()
+    return " ".join(name.strip().split())
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
