@@ -1,6 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 def normalize_name(name):
+    if not isinstance(name, str):
+        raise TypeError("name must be a string")
     return " ".join(name.strip().split())
 
 class Handler(BaseHTTPRequestHandler):
